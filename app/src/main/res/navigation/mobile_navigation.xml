@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_dashboard">
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.example.saveeasy.ui.dashboard.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_scan"
+        android:name="com.example.saveeasy.ui.scan.ScanFragment"
+        android:label="@string/title_scan"
+        tools:layout="@layout/fragment_scan" />
+
+
+    <fragment
+        android:id="@+id/navigation_reports"
+        android:name="com.example.saveeasy.ui.reports.ReportFragment"
+        android:label="@string/title_reports"
+        tools:layout="@layout/fragment_reports" />
+
+    <fragment
+        android:id="@+id/navigation_receipts"
+        android:name="com.example.saveeasy.ui.receipts.ReceiptsFragment"
+        android:label="@string/title_receipts"
+        tools:layout="@layout/fragment_receipts" />
+
+    <fragment
+        android:id="@+id/navigation_signin"
+        android:name="com.example.saveeasy.ui.signin.SingInFragment"
+        android:label="@string/title_signin"
+        tools:layout="@layout/fragment_receipts" >
+        <action
+            android:id="@+id/action_navigation_signin_to_navigation_scan"
+            app:destination="@id/navigation_scan" />
+        <action
+            android:id="@+id/action_navigation_signin_to_navigation_signup"
+            app:destination="@id/navigation_signup" />
+        <action
+            android:id="@+id/action_navigation_signin_to_navigation_forgot"
+            app:destination="@id/navigation_forgot" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_signup"
+        android:name="com.example.saveeasy.ui.signup.SignUpFragment"
+        android:label="@string/title_signup"
+        tools:layout="@layout/fragment_receipts" >
+        <action
+            android:id="@+id/action_navigation_signup_to_navigation_signin"
+            app:destination="@id/navigation_signin" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_resetPass"
+        android:name="com.example.saveeasy.ui.resetpassword.ResetPasswordFragment"
+        android:label="@string/title_reset_password"
+        tools:layout="@layout/fragment_receipts" >
+        <action
+            android:id="@+id/action_navigation_resetPass_to_navigation_signin"
+            app:destination="@id/navigation_signin" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_forgot"
+        android:name="com.example.saveeasy.ui.forgetpassword.ForgotPasswordFragment"
+        android:label="@string/title_receipts"
+        tools:layout="@layout/fragment_receipts" >
+        <action
+            android:id="@+id/action_navigation_forgot_to_navigation_resetPass"
+            app:destination="@id/navigation_resetPass" />
+    </fragment>
+</navigation>

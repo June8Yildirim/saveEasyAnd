@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/fullscreenBackgroundColor"
+    android:theme="@style/ThemeOverlay.SaveEasy.FullscreenContainer"
+    tools:context=".ui.signin.SingInFragment">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@color/gray50"
+        tools:ignore="UselessParent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="679dp"
+            android:id="@+id/signin_ConsLayControls"
+            android:paddingHorizontal="20dp">
+
+
+            <TextView
+                android:id="@+id/signInHeader"
+                android:layout_width="379dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="76dp"
+                android:paddingHorizontal="10dp"
+                android:text="@string/welcome_back"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/primaryBtn"
+                android:layout_width="385dp"
+                android:layout_height="54dp"
+                android:layout_marginTop="32dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.4"
+                app:layout_constraintStart_toStartOf="@+id/signInHeader"
+                app:layout_constraintTop_toBottomOf="@+id/signInHeader">
+
+                <Button
+                    android:id="@+id/btn_email"
+                    android:layout_width="176dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@color/gray100"
+                    android:text="@string/email"
+                    tools:layout_editor_absoluteY="136dp" />
+
+                <Button
+                    android:id="@+id/btn_phone"
+                    android:layout_width="171dp"
+                    android:layout_height="44dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@color/gray100"
+                    android:text="@string/phone" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/emailLayout"
+                android:layout_width="375dp"
+                android:layout_height="71dp"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/primaryBtn"
+                app:layout_constraintTop_toBottomOf="@+id/primaryBtn">
+
+                <TextView
+                    android:id="@+id/label_email"
+                    android:layout_width="84dp"
+                    android:layout_height="25dp"
+                    android:paddingHorizontal="10dp"
+                    android:text="@string/email"
+                    android:textColor="@color/black"
+                    tools:layout_editor_absoluteY="192dp" />
+
+                <EditText
+                    android:id="@+id/input_email"
+                    android:layout_width="254dp"
+                    android:layout_height="39dp"
+                    android:autofillHints=""
+                    android:background="@color/white"
+                    android:ems="10"
+                    android:hint="@string/enter_your_email"
+                    android:inputType="textEmailAddress"
+                    android:paddingHorizontal="10dp"
+                    android:textColorHint="@color/black"
+                    tools:layout_editor_absoluteY="217dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/passwordLayout"
+                android:layout_width="371dp"
+                android:layout_height="92dp"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                app:layout_constraintBaseline_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.416"
+
+                app:layout_constraintStart_toStartOf="@+id/emailLayout"
+                app:layout_constraintTop_toBottomOf="@+id/emailLayout">
+
+                <TextView
+                    android:id="@+id/label_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="@string/password"
+                    android:textColor="@color/black"
+                    tools:ignore="TextViewEdits"
+                    tools:layout_editor_absoluteY="273dp" />
+
+                <EditText
+                    android:id="@+id/input_password"
+                    android:layout_width="254dp"
+                    android:layout_height="45dp"
+                    android:background="@color/white"
+                    android:ems="10"
+                    android:hint="@string/enter_your_password"
+                    android:importantForAutofill="no"
+                    android:inputType="textPassword"
+                    android:paddingHorizontal="10dp"
+                    android:textColorHint="@color/black"
+                    tools:layout_editor_absoluteY="292dp" />
+
+
+                <TextView
+                    android:id="@+id/label_forgot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/forgot_your_password"
+                    android:textColor="@color/black"
+                    tools:layout_editor_absoluteY="337dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="377dp"
+                android:layout_height="141dp"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="@+id/passwordLayout"
+                app:layout_constraintTop_toBottomOf="@+id/passwordLayout">
+
+
+                <Button
+                    android:id="@+id/btn_login"
+                    android:layout_width="372dp"
+                    android:layout_height="52dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@color/green500"
+                    android:text="@string/log_in" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="10dp"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <TextView
+                        android:id="@+id/txt_account"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/don_t_have_an_account"
+                        android:textColor="@color/black"
+                        tools:layout_editor_absoluteY="420dp" />
+
+                    <TextView
+                        android:id="@+id/txt_signup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:text="@string/sign_up"
+                        android:textColor="@color/green500"
+                        tools:layout_editor_absoluteX="196dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+</FrameLayout>
